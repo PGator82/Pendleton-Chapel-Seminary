@@ -3,8 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Pendleton Chapel Seminary</title>
 <meta name="description" content="Pendleton Chapel Seminary — Discipleship, Chaplaincy, and Formation">
+
+<!-- FAVICON -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="favicon.svg">
 
 <style>
 :root{
@@ -36,11 +41,19 @@ a{color:inherit;text-decoration:none}
   display:flex;
   flex-wrap:wrap;
   align-items:center;
-  gap:12px;
+  gap:14px;
 }
 .brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
   font-weight:800;
   font-size:16px;
+}
+.brand img{
+  height:36px;
+  width:auto;
+  display:block;
 }
 .menu{
   display:flex;
@@ -73,6 +86,7 @@ a{color:inherit;text-decoration:none}
 }
 h1{font-size:34px;margin:0 0 10px}
 h2{font-size:26px;margin:30px 0 10px}
+h3{font-size:18px;margin:0 0 6px}
 p{color:var(--muted);line-height:1.6}
 .grid{
   display:grid;
@@ -98,10 +112,14 @@ footer{
 
 <body>
 
-<!-- NAVIGATION BAR -->
+<!-- NAVIGATION -->
 <div class="navbar">
   <div class="navwrap">
-    <div class="brand">Pendleton Chapel Seminary</div>
+    <a class="brand" href="./index.html">
+      <img src="logo.svg" alt="Pendleton Chapel Seminary Logo">
+      <span>Pendleton Chapel Seminary</span>
+    </a>
+
     <nav class="menu">
       <a href="./index.html">Home</a>
       <a href="./admissions.html">Admissions &amp; MDiv</a>
@@ -113,6 +131,7 @@ footer{
   </div>
 </div>
 
+<!-- PAGE CONTENT -->
 <div class="container">
 
   <h1>Pendleton Chapel Seminary</h1>
@@ -123,8 +142,9 @@ footer{
   </p>
 
   <p>
-    Pendleton Chapel Seminary forms disciples, pastors, and chaplains for faithful service in churches, communities, and public spaces.
-    Rooted in Baptist tradition and shaped by chaplaincy practice, we prepare leaders to serve with peace, integrity, and wisdom.
+    Pendleton Chapel Seminary forms disciples, pastors, and chaplains for faithful service in churches,
+    communities, and public spaces. Rooted in Baptist tradition and shaped by chaplaincy practice,
+    we prepare leaders to serve with peace, integrity, and wisdom.
   </p>
 
   <h2>Disciples Join Now</h2>
@@ -155,14 +175,14 @@ footer{
   </div>
 
   <footer>
-    © <span id="y"></span> Pendleton Chapel Seminary<br>
+    © <span id="year"></span> Pendleton Chapel Seminary<br>
     Independent religious institution rooted in Baptist tradition. Ordination and commissioning are governed by local churches.
   </footer>
 
 </div>
 
 <script>
-  document.getElementById("y").textContent = new Date().getFullYear();
+  document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
 </body>
