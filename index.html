@@ -1,556 +1,168 @@
-<!-- index.html (UPDATED + modern “tech site” tricks + anchors) -->
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pendleton Chapel Seminary</title>
-<meta name="description" content="Pendleton Chapel Seminary — Discipleship, Chaplaincy, and Formation" />
+<meta name="description" content="Pendleton Chapel Seminary — Discipleship, Chaplaincy, and Formation">
 
 <style>
-  :root{
-    --bg:#070a14;
-    --bg2:#0b1020;
-    --card:rgba(255,255,255,.05);
-    --text:#f2f5ff;
-    --muted:#b9c0ff;
-    --line:rgba(255,255,255,.12);
-    --accent:#7dd3fc;
-    --accent2:#a78bfa;
-    --shadow: 0 18px 60px rgba(0,0,0,.35);
-  }
+:root{
+  --bg:#0b1020;
+  --card:#161b33;
+  --text:#f0f3ff;
+  --muted:#b9c0ff;
+  --line:rgba(255,255,255,.15);
+  --accent:#7dd3fc;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  background:linear-gradient(180deg,#0b1020,#060812);
+  color:var(--text);
+}
+a{color:inherit;text-decoration:none}
 
-  /* Light theme (optional toggle) */
-  html[data-theme="light"]{
-    --bg:#f7f8ff;
-    --bg2:#ffffff;
-    --card:rgba(10,18,40,.04);
-    --text:#0b1020;
-    --muted:#3a4570;
-    --line:rgba(10,18,40,.15);
-    --shadow: 0 18px 60px rgba(10,18,40,.12);
-  }
+/* NAV BAR */
+.navbar{
+  background:rgba(11,16,32,.95);
+  border-bottom:1px solid var(--line);
+}
+.navwrap{
+  max-width:1100px;
+  margin:auto;
+  padding:12px 18px;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:12px;
+}
+.brand{
+  font-weight:800;
+  font-size:16px;
+}
+.menu{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.menu a{
+  font-size:13px;
+  padding:8px 12px;
+  border-radius:10px;
+  background:rgba(255,255,255,.04);
+  border:1px solid transparent;
+  color:var(--muted);
+}
+.menu a:hover{
+  color:var(--text);
+  border-color:var(--line);
+}
+.menu a.primary{
+  background:linear-gradient(135deg,var(--accent),#a78bfa);
+  color:#061021;
+  font-weight:700;
+}
 
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{
-    margin:0;
-    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-    color:var(--text);
-    background:
-      radial-gradient(900px 500px at 15% -5%, rgba(125,211,252,.22), transparent 60%),
-      radial-gradient(900px 500px at 85% -10%, rgba(167,139,250,.20), transparent 60%),
-      linear-gradient(180deg, var(--bg2), var(--bg));
-    min-height:100vh;
-  }
-
-  a{color:inherit}
-
-  .wrap{max-width:1120px;margin:0 auto;padding:0 18px}
-  .spacer{height:18px}
-
-  /* Top Nav (glass + sticky) */
-  .topbar{
-    position:sticky; top:0; z-index:50;
-    background: color-mix(in oklab, var(--bg2) 68%, transparent);
-    backdrop-filter: blur(14px);
-    border-bottom:1px solid var(--line);
-  }
-  .navrow{
-    display:flex; align-items:center; justify-content:space-between;
-    gap:12px; padding:12px 0;
-  }
-  .brand{
-    display:flex; flex-direction:column; gap:2px;
-    text-decoration:none;
-    min-width: 240px;
-  }
-  .brand .title{
-    font-weight:900; letter-spacing:.2px;
-    line-height:1.1;
-  }
-  .brand .tag{
-    font-size:12px; color:var(--muted);
-  }
-
-  .menu{
-    display:flex; flex-wrap:wrap; gap:8px; align-items:center; justify-content:flex-end;
-  }
-  .menu a, .iconbtn{
-    text-decoration:none;
-    color:var(--muted);
-    border:1px solid transparent;
-    background:rgba(255,255,255,.03);
-    padding:8px 10px;
-    border-radius:14px;
-    font-size:13px;
-    transition: transform .15s ease, background .15s ease, border-color .15s ease, color .15s ease;
-    user-select:none;
-  }
-  .menu a:hover, .iconbtn:hover{
-    transform: translateY(-1px);
-    color:var(--text);
-    border-color:var(--line);
-    background:rgba(255,255,255,.06);
-  }
-  .menu a.primary{
-    color:#061021;
-    border-color:transparent;
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
-    font-weight:800;
-  }
-  .menu a.active{
-    color:var(--text);
-    border-color: color-mix(in oklab, var(--accent) 35%, var(--line));
-    background: color-mix(in oklab, var(--accent2) 12%, rgba(255,255,255,.03));
-  }
-
-  .righttools{display:flex; gap:8px; align-items:center}
-  .iconbtn{
-    display:inline-flex; align-items:center; justify-content:center;
-    width:38px; height:38px; padding:0;
-  }
-  .hamburger{display:none}
-
-  /* Mobile nav */
-  .mobilePanel{
-    display:none;
-    border-top:1px solid var(--line);
-    padding:10px 0 14px;
-  }
-  .mobilePanel .menu{justify-content:flex-start}
-  .divider{height:1px;background:var(--line);margin:10px 0}
-
-  /* Hero */
-  .hero{padding:28px 0 14px}
-  .badge{
-    display:inline-flex; gap:8px; align-items:center;
-    padding:6px 10px;
-    border-radius:999px;
-    border:1px solid var(--line);
-    background:rgba(255,255,255,.03);
-    color:var(--muted);
-    font-size:12px;
-    margin-bottom:10px;
-  }
-  .dot{width:8px;height:8px;border-radius:99px;background:var(--accent); box-shadow:0 0 0 6px rgba(125,211,252,.12)}
-  h1{font-size:36px;margin:0 0 8px;letter-spacing:-.4px}
-  .lead{color:var(--muted);max-width:70ch;line-height:1.7;margin:0}
-  .protect{font-size:12px;color:var(--muted);margin-top:10px}
-  .ctaRow{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px}
-  .btn{
-    display:inline-flex; align-items:center; justify-content:center;
-    padding:10px 12px;
-    border-radius:14px;
-    border:1px solid var(--line);
-    background:rgba(255,255,255,.04);
-    text-decoration:none;
-    font-weight:800;
-    font-size:13px;
-    transition: transform .15s ease, filter .15s ease, border-color .15s ease, background .15s ease;
-  }
-  .btn:hover{transform: translateY(-1px); background:rgba(255,255,255,.06)}
-  .btn.primary{
-    border-color:transparent;
-    color:#061021;
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
-  }
-  .btn.primary:hover{filter:brightness(1.05)}
-  .heroGrid{
-    display:grid;
-    grid-template-columns: 1.25fr .75fr;
-    gap:14px;
-    margin-top:18px;
-  }
-
-  /* Cards + modern hover */
-  .card{
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:18px;
-    padding:16px;
-    box-shadow: var(--shadow);
-  }
-  .card.slim{box-shadow:none}
-  .grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:14px;
-    margin-top:14px;
-  }
-  .hover{
-    transition: transform .18s ease, border-color .18s ease, background .18s ease;
-    position:relative;
-    overflow:hidden;
-  }
-  .hover::before{
-    content:"";
-    position:absolute; inset:-2px;
-    background: radial-gradient(600px 180px at 20% 0%, rgba(125,211,252,.18), transparent 60%),
-                radial-gradient(600px 180px at 80% 0%, rgba(167,139,250,.16), transparent 60%);
-    opacity:0;
-    transition: opacity .18s ease;
-    pointer-events:none;
-  }
-  .hover:hover{
-    transform: translateY(-3px);
-    border-color: color-mix(in oklab, var(--accent) 30%, var(--line));
-    background: color-mix(in oklab, var(--accent2) 6%, var(--card));
-  }
-  .hover:hover::before{opacity:1}
-  h2{font-size:26px;margin:28px 0 8px}
-  h3{font-size:18px;margin:0 0 8px}
-  p{margin:0 0 10px;color:var(--muted);line-height:1.65}
-  ul{margin:10px 0 0;padding-left:18px;color:var(--muted)}
-  li{margin:6px 0}
-
-  /* Section reveal */
-  .reveal{opacity:0; transform: translateY(10px); transition: opacity .55s ease, transform .55s ease}
-  .reveal.in{opacity:1; transform:none}
-
-  /* Footer */
-  footer{
-    margin-top:38px;
-    border-top:1px solid var(--line);
-    padding:18px 0 34px;
-    color:var(--muted);
-    font-size:12px;
-  }
-
-  /* Back to top */
-  .totop{
-    position:fixed; right:16px; bottom:16px; z-index:60;
-    width:44px; height:44px; border-radius:14px;
-    border:1px solid var(--line);
-    background:rgba(255,255,255,.06);
-    color:var(--text);
-    display:flex; align-items:center; justify-content:center;
-    box-shadow: var(--shadow);
-    opacity:0; transform: translateY(6px);
-    pointer-events:none;
-    transition: opacity .2s ease, transform .2s ease;
-    cursor:pointer;
-  }
-  .totop.show{opacity:1; transform:none; pointer-events:auto}
-
-  /* Reduced motion respect */
-  @media (prefers-reduced-motion: reduce){
-    html{scroll-behavior:auto}
-    .hover, .menu a, .btn, .reveal, .totop{transition:none}
-    .hover:hover{transform:none}
-  }
-
-  @media (max-width: 920px){
-    .heroGrid{grid-template-columns:1fr}
-  }
-  @media (max-width: 860px){
-    .hamburger{display:inline-flex}
-    .menu.desktop{display:none}
-    .mobilePanel{display:block}
-    .brand{min-width:auto}
-  }
+/* CONTENT */
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:28px 18px 40px;
+}
+h1{font-size:34px;margin:0 0 10px}
+h2{font-size:26px;margin:30px 0 10px}
+p{color:var(--muted);line-height:1.6}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:16px;
+}
+.card{
+  background:rgba(255,255,255,.05);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:18px;
+}
+.small{font-size:12px;color:var(--muted)}
+footer{
+  margin-top:40px;
+  padding-top:18px;
+  border-top:1px solid var(--line);
+  font-size:12px;
+  color:var(--muted);
+}
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
-<header class="topbar">
-  <div class="wrap">
-    <div class="navrow">
-      <a class="brand" href="#home">
-        <div class="title">Pendleton Chapel Seminary</div>
-        <div class="tag">Discipleship • Chaplaincy • Formation</div>
-      </a>
+<!-- NAVIGATION BAR -->
+<div class="navbar">
+  <div class="navwrap">
+    <div class="brand">Pendleton Chapel Seminary</div>
+    <nav class="menu">
+      <a href="./index.html">Home</a>
+      <a href="./admissions.html">Admissions &amp; MDiv</a>
+      <a href="./chaplaincy.html">Chaplaincy Track</a>
+      <a href="./faculty.html">Faculty</a>
+      <a href="./governance.html">Governance</a>
+      <a class="primary" href="#apply">Apply</a>
+    </nav>
+  </div>
+</div>
 
-      <!-- Desktop menu -->
-      <nav class="menu desktop" aria-label="Site Menu">
-        <a class="navlink" href="#home">Home</a>
-        <a class="navlink" href="#disciples">Disciples Join Now</a>
-        <a class="navlink" href="#goals">Goals</a>
-        <a class="navlink" href="#affiliation">Affiliation</a>
-        <a class="navlink" href="#order">Melchizedek Pattern</a>
-        <a href="admissions.html">Admissions &amp; MDiv</a>
-        <a href="chaplaincy.html">Chaplaincy Track</a>
-        <a href="faculty.html">Faculty</a>
-        <a href="governance.html">Governance</a>
-        <a class="navlink primary" href="#apply">Apply</a>
-      </nav>
+<div class="container">
 
-      <!-- Right tools -->
-      <div class="righttools">
-        <button class="iconbtn" id="themeBtn" type="button" title="Toggle theme" aria-label="Toggle theme">
-          <!-- moon/sun -->
-          <span id="themeIcon">☾</span>
-        </button>
-        <button class="iconbtn hamburger" id="hamburgerBtn" type="button" title="Menu" aria-label="Open menu">☰</button>
-      </div>
+  <h1>Pendleton Chapel Seminary</h1>
+  <p><b>Discipleship • Chaplaincy • Formation</b></p>
+
+  <p class="small">
+    Affiliation reflects shared heritage and cooperation; Pendleton Chapel Seminary is not governed by the Southern Baptist Convention or the Baptist General Convention of Texas.
+  </p>
+
+  <p>
+    Pendleton Chapel Seminary forms disciples, pastors, and chaplains for faithful service in churches, communities, and public spaces.
+    Rooted in Baptist tradition and shaped by chaplaincy practice, we prepare leaders to serve with peace, integrity, and wisdom.
+  </p>
+
+  <h2>Disciples Join Now</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Identity</h3>
+      <p>Calling, character, ethics, and spiritual maturity.</p>
     </div>
-
-    <!-- Mobile menu -->
-    <div class="mobilePanel" id="mobilePanel" hidden>
-      <nav class="menu" aria-label="Mobile Menu">
-        <a class="navlink" href="#home">Home</a>
-        <a class="navlink" href="#disciples">Disciples Join Now</a>
-        <a class="navlink" href="#goals">Goals</a>
-        <a class="navlink" href="#affiliation">Affiliation</a>
-        <a class="navlink" href="#order">Melchizedek Pattern</a>
-        <div class="divider"></div>
-        <a href="admissions.html">Admissions &amp; MDiv</a>
-        <a href="chaplaincy.html">Chaplaincy Track</a>
-        <a href="faculty.html">Faculty</a>
-        <a href="governance.html">Governance</a>
-        <a class="navlink primary" href="#apply">Apply</a>
-      </nav>
+    <div class="card">
+      <h3>Formation</h3>
+      <p>Spiritual disciplines, resilience, prayer, and Scripture.</p>
+    </div>
+    <div class="card">
+      <h3>Mission</h3>
+      <p>Gospel-centered service and non-coercive witness.</p>
     </div>
   </div>
-</header>
 
-<main class="wrap">
-
-  <!-- HERO -->
-  <section id="home" class="hero reveal">
-    <div class="badge"><span class="dot" aria-hidden="true"></span> Southern Baptist Heritage • BGCT Connected</div>
-    <h1>Pendleton Chapel Seminary</h1>
-    <p class="lead">
-      Pendleton Chapel Seminary forms disciples, pastors, and chaplains for faithful service in churches, communities, and public spaces.
-      Rooted in Baptist tradition and shaped by chaplaincy practice, we prepare leaders to serve with peace, integrity, and wisdom.
+  <h2 id="apply">Apply / Request Information</h2>
+  <div class="card">
+    <p>
+      Students pursuing discipleship, pastoral leadership, or chaplaincy are invited to begin the admissions conversation.
+      Please use the application form embedded on our Google Sites Apply page.
     </p>
-
-    <p class="protect">
-      Affiliation reflects shared heritage and cooperation; Pendleton Chapel Seminary is not governed by the Southern Baptist Convention or the Baptist General Convention of Texas.
+    <p class="small">
+      Completion of chaplaincy coursework does not guarantee certification or employment and does not replace requirements set by endorsing bodies or employers.
     </p>
+  </div>
 
-    <div class="ctaRow">
-      <a class="btn primary" href="admissions.html">Admissions &amp; MDiv</a>
-      <a class="btn" href="chaplaincy.html">Chaplaincy Track</a>
-      <a class="btn" href="#apply">Apply</a>
-    </div>
-
-    <div class="heroGrid">
-      <div class="card hover">
-        <h3>Fast Snapshot</h3>
-        <p>
-          A seminary built for students who want sound theology <em>and</em> real-world ministry skill—without losing heart.
-        </p>
-        <ul>
-          <li>Christ-centered formation</li>
-          <li>Local-church accountability</li>
-          <li>Ethical, non-coercive chaplaincy posture</li>
-        </ul>
-      </div>
-      <div class="card slim">
-        <h3>Quick Links</h3>
-        <p>
-          Use these pages for embedding in Google Sites (each has its own URL):
-        </p>
-        <ul>
-          <li><a href="admissions.html">Admissions &amp; MDiv</a></li>
-          <li><a href="chaplaincy.html">Chaplaincy Track</a></li>
-          <li><a href="faculty.html">Faculty &amp; Leadership</a></li>
-          <li><a href="governance.html">Governance &amp; Integrity</a></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- DISCIPLES -->
-  <section id="disciples" class="reveal">
-    <h2>Disciples Join Now</h2>
-    <p>A formation pathway designed to move students from belief to practice in everyday life and ministry.</p>
-
-    <div class="grid">
-      <div class="card hover">
-        <h3>Identity</h3>
-        <p>Calling, character, ethics, and spiritual maturity for sustainable ministry.</p>
-      </div>
-      <div class="card hover">
-        <h3>Formation</h3>
-        <p>Spiritual disciplines, emotional resilience, prayer, and Scripture.</p>
-      </div>
-      <div class="card hover">
-        <h3>Mission</h3>
-        <p>Gospel-centered service, reconciliation, and non-coercive witness.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- GOALS -->
-  <section id="goals" class="reveal">
-    <h2>Our Goals</h2>
-    <div class="grid">
-      <div class="card hover">
-        <h3>Competent Spiritual Care</h3>
-        <p>Graduates trained in pastoral presence, crisis care, and ethical ministry.</p>
-      </div>
-      <div class="card hover">
-        <h3>Church Strengthening</h3>
-        <p>Leaders equipped to shepherd, teach, and serve local congregations.</p>
-      </div>
-      <div class="card hover">
-        <h3>Chaplaincy Readiness</h3>
-        <p>Preparation for hospital, hospice, correctional, and community chaplaincy.</p>
-      </div>
-      <div class="card hover">
-        <h3>Peacemaking Ministry</h3>
-        <p>Formation shaped by peace, blessing, and service.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- AFFILIATION -->
-  <section id="affiliation" class="reveal">
-    <h2>Affiliation</h2>
-    <div class="card hover">
-      <p>
-        Pendleton Chapel Seminary maintains longstanding connections within Southern Baptist life and the Baptist General Convention of Texas.
-        Ordination and commissioning remain under local-church authority.
-      </p>
-      <p class="protect">
-        Pendleton Chapel Seminary is an independent religious institution rooted in Baptist tradition. Accreditation status, if applicable, is stated explicitly.
-      </p>
-    </div>
-  </section>
-
-  <!-- MELCHIZEDEK PATTERN -->
-  <section id="order" class="reveal">
-    <h2>The Order of Melchizedek (Biblical Pattern)</h2>
-    <div class="card hover">
-      <p>
-        We teach the Order of Melchizedek as a biblical pattern of peace, blessing, and nourishment—fulfilled in Jesus Christ (Hebrews 7).
-        This framework informs our approach to leadership and chaplaincy in a Christ-centered and accountable way.
-      </p>
-      <p class="protect">
-        The Order of Melchizedek is taught as a biblical pattern fulfilled in Christ and does not confer priestly authority or replace local-church governance.
-      </p>
-    </div>
-
-    <div class="grid">
-      <div class="card hover">
-        <h3>Peace</h3>
-        <p>Ministry that stabilizes chaos through presence, truth, and reconciliation.</p>
-      </div>
-      <div class="card hover">
-        <h3>Blessing</h3>
-        <p>Service offered without coercion, honoring dignity and conscience.</p>
-      </div>
-      <div class="card hover">
-        <h3>Nourishment</h3>
-        <p>Grounding care, prayer when invited, and meaningful presence.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- APPLY -->
-  <section id="apply" class="reveal">
-    <h2>Apply / Request Information</h2>
-    <div class="card hover">
-      <p>
-        Students pursuing discipleship, pastoral leadership, or chaplaincy are invited to request information or begin the admissions conversation.
-        Embed your Google Application Form on your Google Sites “Apply” page (recommended), or link it here.
-      </p>
-      <p class="protect">
-        Completion of chaplaincy coursework does not guarantee certification or employment and does not replace requirements set by endorsing bodies or employers.
-      </p>
-    </div>
-  </section>
-
-  <footer class="reveal">
-    © <span id="year"></span> Pendleton Chapel Seminary<br />
-    Pendleton Chapel Seminary is an independent religious institution rooted in Baptist tradition. Ordination and commissioning are governed by local churches.
-    Accreditation status, if applicable, is stated explicitly.
+  <footer>
+    © <span id="y"></span> Pendleton Chapel Seminary<br>
+    Independent religious institution rooted in Baptist tradition. Ordination and commissioning are governed by local churches.
   </footer>
 
-</main>
-
-<!-- Back to top -->
-<button class="totop" id="toTop" type="button" title="Back to top" aria-label="Back to top">↑</button>
+</div>
 
 <script>
-  // Year
-  document.getElementById("year").textContent = new Date().getFullYear();
-
-  // Mobile menu toggle
-  const hamb = document.getElementById("hamburgerBtn");
-  const panel = document.getElementById("mobilePanel");
-  if (hamb && panel){
-    hamb.addEventListener("click", () => {
-      const isHidden = panel.hasAttribute("hidden");
-      if (isHidden) panel.removeAttribute("hidden");
-      else panel.setAttribute("hidden","");
-    });
-  }
-
-  // Close mobile menu after clicking an anchor
-  document.querySelectorAll('.navlink').forEach(a => {
-    a.addEventListener('click', () => {
-      if (!panel) return;
-      panel.setAttribute("hidden","");
-    });
-  });
-
-  // Theme toggle (remembers preference)
-  const themeBtn = document.getElementById("themeBtn");
-  const themeIcon = document.getElementById("themeIcon");
-  const savedTheme = localStorage.getItem("pcs_theme");
-  if (savedTheme) document.documentElement.setAttribute("data-theme", savedTheme);
-
-  function syncIcon(){
-    const t = document.documentElement.getAttribute("data-theme");
-    themeIcon.textContent = (t === "light") ? "☀" : "☾";
-  }
-  syncIcon();
-
-  themeBtn.addEventListener("click", () => {
-    const current = document.documentElement.getAttribute("data-theme");
-    const next = (current === "light") ? "dark" : "light";
-    document.documentElement.setAttribute("data-theme", next);
-    localStorage.setItem("pcs_theme", next);
-    syncIcon();
-  });
-
-  // Section reveal on scroll
-  const revealEls = document.querySelectorAll(".reveal");
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) e.target.classList.add("in");
-    });
-  }, { threshold: 0.12 });
-  revealEls.forEach(el => io.observe(el));
-
-  // Scrollspy: highlight active anchor in nav
-  const sections = ["home","disciples","goals","affiliation","order","apply"]
-    .map(id => document.getElementById(id))
-    .filter(Boolean);
-
-  const navAnchors = Array.from(document.querySelectorAll('a.navlink'))
-    .filter(a => (a.getAttribute("href") || "").startsWith("#"));
-
-  function setActive(id){
-    navAnchors.forEach(a => {
-      const hit = (a.getAttribute("href") === "#" + id);
-      a.classList.toggle("active", hit);
-    });
-  }
-
-  const spy = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) setActive(e.target.id);
-    });
-  }, { rootMargin: "-35% 0px -55% 0px", threshold: 0.01 });
-
-  sections.forEach(s => spy.observe(s));
-
-  // Back to top button
-  const toTop = document.getElementById("toTop");
-  window.addEventListener("scroll", () => {
-    const show = window.scrollY > 600;
-    toTop.classList.toggle("show", show);
-  }, { passive:true });
-
-  toTop.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
+  document.getElementById("y").textContent = new Date().getFullYear();
 </script>
 
 </body>
