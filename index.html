@@ -1,1 +1,174 @@
 
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pendleton Chapel Seminary</title>
+<meta name="description" content="Pendleton Chapel Seminary — Discipleship, Chaplaincy, and Formation">
+
+<style>
+:root{
+  --bg:#0e1222;
+  --card:#161b33;
+  --text:#f0f3ff;
+  --muted:#b9c0ff;
+  --accent:#7dd3fc;
+  --accent2:#a78bfa;
+  --line:rgba(255,255,255,.12);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  background:linear-gradient(180deg,#0b1020,#060812);
+  color:var(--text);
+}
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:32px 18px;
+}
+h1,h2,h3{margin:0 0 12px}
+h1{font-size:34px}
+h2{font-size:26px;margin-top:36px}
+h3{font-size:18px}
+p{color:var(--muted);line-height:1.6}
+.card{
+  background:rgba(255,255,255,.04);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:18px;
+  margin-top:16px;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:16px;
+}
+.badge{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.03);
+  font-size:12px;
+  color:var(--muted);
+  margin-bottom:10px;
+}
+footer{
+  margin-top:48px;
+  padding-top:20px;
+  border-top:1px solid var(--line);
+  font-size:12px;
+  color:var(--muted);
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <!-- HERO -->
+  <span class="badge">Southern Baptist Heritage • BGCT Connected</span>
+  <h1>Pendleton Chapel Seminary</h1>
+  <p><b>Discipleship • Chaplaincy • Formation</b></p>
+
+  <p>
+    Pendleton Chapel Seminary forms disciples, pastors, and chaplains for faithful
+    service in churches, communities, and public spaces. Rooted in a long-standing
+    Southern Baptist tradition and shaped by chaplaincy practice, we prepare leaders
+    to serve with peace, integrity, and wisdom.
+  </p>
+
+  <!-- DISCIPLES JON NOW -->
+  <h2>Disciples Jon Now</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Identity</h3>
+      <p>Calling, character, ethics, and spiritual maturity for sustainable ministry.</p>
+    </div>
+    <div class="card">
+      <h3>Formation</h3>
+      <p>Spiritual disciplines, emotional resilience, prayer, and Scripture.</p>
+    </div>
+    <div class="card">
+      <h3>Mission</h3>
+      <p>Gospel-centered service, reconciliation, and non-coercive witness.</p>
+    </div>
+  </div>
+
+  <!-- GOALS -->
+  <h2>Our Goals</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Competent Spiritual Care</h3>
+      <p>Graduates trained in pastoral presence, crisis care, and ethical ministry.</p>
+    </div>
+    <div class="card">
+      <h3>Church Strengthening</h3>
+      <p>Leaders equipped to shepherd, teach, and serve local congregations.</p>
+    </div>
+    <div class="card">
+      <h3>Chaplaincy Readiness</h3>
+      <p>Preparation for hospital, prison, hospice, campus, and community chaplaincy.</p>
+    </div>
+    <div class="card">
+      <h3>Peacemaking Ministry</h3>
+      <p>Formation shaped by peace, blessing, and service.</p>
+    </div>
+  </div>
+
+  <!-- AFFILIATION -->
+  <h2>Affiliation</h2>
+  <div class="card">
+    <p>
+      Pendleton Chapel Seminary maintains longstanding connections within Southern
+      Baptist life and the Baptist General Convention of Texas. Ordination and
+      commissioning remain under local-church authority.
+    </p>
+  </div>
+
+  <!-- PRIESTHOOD ORDER -->
+  <h2>The Order of Melchizedek (Biblical Pattern)</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Peace</h3>
+      <p>Ministry that stabilizes chaos through presence and reconciliation.</p>
+    </div>
+    <div class="card">
+      <h3>Blessing</h3>
+      <p>Service offered without coercion, honoring dignity and conscience.</p>
+    </div>
+    <div class="card">
+      <h3>Nourishment</h3>
+      <p>Grounding care, prayer when invited, and meaningful presence.</p>
+    </div>
+    <div class="card">
+      <h3>Christ at the Center</h3>
+      <p>Christ alone is our eternal High Priest; we affirm the priesthood of all believers.</p>
+    </div>
+  </div>
+
+  <!-- APPLY -->
+  <h2>Apply / Request Information</h2>
+  <div class="card">
+    <p>
+      Students pursuing discipleship, pastoral leadership, or chaplaincy are invited
+      to request information or begin the admissions conversation.
+    </p>
+    <p><b>Next step:</b> Embed a Google Form below this page inside Google Sites.</p>
+  </div>
+
+  <footer>
+    © <span id="year"></span> Pendleton Chapel Seminary<br>
+    Independent religious institution. Accreditation status, if applicable, is listed separately.
+  </footer>
+
+</div>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
