@@ -1,144 +1,142 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<title>Pendleton Chapel Seminary</title>
-<meta name="description" content="Pendleton Chapel Seminary — Discipleship, Chaplaincy, and Formation">
+  <title>Pendleton Chapel Seminary</title>
+  <meta name="description" content="Pendleton Chapel Seminary — Discipleship, Chaplaincy, and Formation">
 
-<!-- FAVICON -->
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="apple-touch-icon" href="favicon.svg">
+  <!-- ✅ FAVICONS -->
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" href="favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="favicon-32.png">
 
-<style>
-:root{
-  --bg:#0b1020;
-  --card:#161b33;
-  --text:#f0f3ff;
-  --muted:#b9c0ff;
-  --line:rgba(255,255,255,.15);
-  --accent:#7dd3fc;
-}
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
-  background:linear-gradient(180deg,#0b1020,#060812);
-  color:var(--text);
-}
-a{color:inherit;text-decoration:none}
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #0b1020;
+      color: #ffffff;
+    }
 
-/* NAV BAR */
-.navbar{
-  background:rgba(11,16,32,.95);
-  border-bottom:1px solid var(--line);
-}
-.navwrap{
-  max-width:1100px;
-  margin:auto;
-  padding:12px 18px;
-  display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-  gap:14px;
-}
-.brand{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-weight:800;
-  font-size:16px;
-}
-.brand img{
-  height:36px;
-  width:auto;
-  display:block;
-}
-.menu{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-}
-.menu a{
-  font-size:13px;
-  padding:8px 12px;
-  border-radius:10px;
-  background:rgba(255,255,255,.04);
-  border:1px solid transparent;
-  color:var(--muted);
-}
-.menu a:hover{
-  color:var(--text);
-  border-color:var(--line);
-}
-.menu a.primary{
-  background:linear-gradient(135deg,var(--accent),#a78bfa);
-  color:#061021;
-  font-weight:700;
-}
+    /* NAV BAR */
+    header {
+      background-color: #111633;
+      border-bottom: 1px solid #2a2f55;
+    }
 
-/* CONTENT */
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:28px 18px 40px;
-}
-h1{font-size:34px;margin:0 0 10px}
-h2{font-size:26px;margin:30px 0 10px}
-h3{font-size:18px;margin:0 0 6px}
-p{color:var(--muted);line-height:1.6}
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:16px;
-}
-.card{
-  background:rgba(255,255,255,.05);
-  border:1px solid var(--line);
-  border-radius:16px;
-  padding:18px;
-}
-.small{font-size:12px;color:var(--muted)}
-footer{
-  margin-top:40px;
-  padding-top:18px;
-  border-top:1px solid var(--line);
-  font-size:12px;
-  color:var(--muted);
-}
-</style>
+    .nav-container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .brand img {
+      height: 36px;
+      width: auto;
+      display: block;
+    }
+
+    nav a {
+      margin-right: 10px;
+      padding: 6px 10px;
+      font-size: 13px;
+      color: #cfd4ff;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+
+    nav a:hover {
+      background-color: #1c2248;
+      color: #ffffff;
+    }
+
+    /* CONTENT */
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 28px 18px;
+    }
+
+    h1 {
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      margin-top: 30px;
+      font-size: 24px;
+    }
+
+    p {
+      line-height: 1.6;
+      color: #cfd4ff;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .card {
+      background-color: #161b33;
+      padding: 18px;
+      border-radius: 12px;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding-top: 18px;
+      border-top: 1px solid #2a2f55;
+      font-size: 12px;
+      color: #cfd4ff;
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
-<div class="navbar">
-  <div class="navwrap">
-    <a class="brand" href="./index.html">
+<header>
+  <div class="nav-container">
+    <!-- ✅ LOGO ADDED -->
+    <div class="brand">
       <img src="logo.svg" alt="Pendleton Chapel Seminary Logo">
       <span>Pendleton Chapel Seminary</span>
-    </a>
+    </div>
 
-    <nav class="menu">
-      <a href="./index.html">Home</a>
-      <a href="./admissions.html">Admissions &amp; MDiv</a>
-      <a href="./chaplaincy.html">Chaplaincy Track</a>
-      <a href="./faculty.html">Faculty</a>
-      <a href="./governance.html">Governance</a>
-      <a class="primary" href="#apply">Apply</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="admissions.html">Admissions & MDiv</a>
+      <a href="chaplaincy.html">Chaplaincy Track</a>
+      <a href="faculty.html">Faculty</a>
+      <a href="governance.html">Governance</a>
     </nav>
   </div>
-</div>
+</header>
 
-<!-- PAGE CONTENT -->
 <div class="container">
-
   <h1>Pendleton Chapel Seminary</h1>
-  <p><b>Discipleship • Chaplaincy • Formation</b></p>
+  <p><strong>Discipleship • Chaplaincy • Formation</strong></p>
 
-  <p class="small">
-    Affiliation reflects shared heritage and cooperation; Pendleton Chapel Seminary is not governed by the Southern Baptist Convention or the Baptist General Convention of Texas.
+  <p>
+    Affiliation reflects shared heritage and cooperation; Pendleton Chapel Seminary is not governed by
+    the Southern Baptist Convention or the Baptist General Convention of Texas.
   </p>
 
   <p>
@@ -148,6 +146,7 @@ footer{
   </p>
 
   <h2>Disciples Join Now</h2>
+
   <div class="grid">
     <div class="card">
       <h3>Identity</h3>
@@ -163,22 +162,10 @@ footer{
     </div>
   </div>
 
-  <h2 id="apply">Apply / Request Information</h2>
-  <div class="card">
-    <p>
-      Students pursuing discipleship, pastoral leadership, or chaplaincy are invited to begin the admissions conversation.
-      Please use the application form embedded on our Google Sites Apply page.
-    </p>
-    <p class="small">
-      Completion of chaplaincy coursework does not guarantee certification or employment and does not replace requirements set by endorsing bodies or employers.
-    </p>
-  </div>
-
   <footer>
     © <span id="year"></span> Pendleton Chapel Seminary<br>
-    Independent religious institution rooted in Baptist tradition. Ordination and commissioning are governed by local churches.
+    Independent religious institution rooted in Baptist tradition.
   </footer>
-
 </div>
 
 <script>
