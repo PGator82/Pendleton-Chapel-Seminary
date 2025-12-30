@@ -1,1 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Pendleton Chapel Seminary</title>
+  <meta name="description" content="Pendleton Chapel Seminary — Discipleship, Chaplaincy, and Formation">
+
+  <!-- FAVICONS -->
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" href="favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="favicon-32.png">
+
+  <style>
+    /* GLOBAL */
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #0b1020;
+      color: #ffffff;
+    }
+
+    a { color: inherit; }
+
+    /* NAV */
+    header {
+      background-color: #111633;
+      border-bottom: 1px solid #2a2f55;
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .brand img {
+      height: 36px;
+      width: auto;
+      display: block;
+    }
+
+    nav a {
+      margin-right: 10px;
+      padding: 6px 10px;
+      font-size: 13px;
+      color: #cfd4ff;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+
+    nav a:hover {
+      background-color: #1c2248;
+      color: #ffffff;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+                  url("images/chapel.jpg");
+      background-size: cover;
+      background-position: center;
+      padding: 100px 20px;
+      text-align: center;
+    }
+    .hero {
+  background-color: #111633;
+}
+
+
+    .hero-content {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .tagline {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+    }
+
+    .mission {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 28px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .btn.primary {
+      background-color: #c8a951;
+      color: #000;
+    }
+
+    .btn.secondary {
+      border: 2px solid #ffffff;
+      color: #ffffff;
+    }
+
+    /* PROGRAMS */
+    .programs {
+      background: #f9f9f9;
+      color: #000;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .program-card {
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    /* CONTENT */
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 18px;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-top: 30px;
+    }
+
+    p {
+      line-height: 1.6;
+      color: #cfd4ff;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .card {
+      background-color: #161b33;
+      padding: 18px;
+      border-radius: 12px;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      border-top: 1px solid #2a2f55;
+      font-size: 12px;
+      color: #cfd4ff;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav-container">
+    <div class="brand">
+      <img src="logo.svg" alt="Pendleton Chapel Seminary Logo">
+      <span>Pendleton Chapel Seminary</span>
+    </div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="admissions.html">Admissions & MDiv</a>
+      <a href="chaplaincy.html">Chaplaincy Track</a>
+      <a href="faculty.html">Faculty</a>
+      <a href="governance.html">Governance</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Pendleton Chapel Seminary</h1>
+    <p class="tagline">Discipleship • Chaplaincy • Formation</p>
+    <p class="mission">
+      Forming pastors, disciples, and chaplains for faithful service in churches,
+      communities, and public spaces.
+    </p>
+    <a href="admissions.html" class="btn primary">Apply Now</a>
+    <a href="about.html" class="btn secondary">Learn More</a>
+  </div>
+</section>
+
+<section class="programs">
+  <h2>Academic Programs</h2>
+  <div class="program-grid">
+    <div class="program-card">
+      <h3>Master of Divinity (MDiv)</h3>
+      <p>Comprehensive theological education for pastoral leadership.</p>
+    </div>
+    <div class="program-card">
+      <h3>Chaplaincy Track</h3>
+      <p>Formation for service in hospitals, prisons, military, and public life.</p>
+    </div>
+    <div class="program-card">
+      <h3>Certificates</h3>
+      <p>Short-term training for lay leaders and ministers.</p>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <p>
+    Affiliation reflects shared heritage and cooperation; Pendleton Chapel Seminary
+    is not governed by the Southern Baptist Convention or the Baptist General
+    Convention of Texas.
+  </p>
+
+  <p>
+    Rooted in Baptist tradition and shaped by chaplaincy practice, we prepare leaders
+    to serve with peace, integrity, and wisdom.
+  </p>
+
+  <h2>Disciples Join Now</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Identity</h3>
+      <p>Calling, character, ethics, and spiritual maturity.</p>
+    </div>
+    <div class="card">
+      <h3>Formation</h3>
+      <p>Spiritual disciplines, resilience, prayer, and Scripture.</p>
+    </div>
+    <div class="card">
+      <h3>Mission</h3>
+      <p>Gospel-centered service and non-coercive witness.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  © <span id="year"></span> Pendleton Chapel Seminary<br>
+  Independent religious institution rooted in Baptist tradition.
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
 
